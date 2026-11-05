@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CourseCard Component</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 200px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px gray;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>COURSE card</h1>
+
+    <div class="container" id="courses"></div>
+
+    <script>
+
+        // CourseCard Component
+        function CourseCard(name, duration, fee) {
+            return `
+                <div class="card">
+                    <h2>${name}</h2>
+                    <p>Duration: ${duration}</p>
+                    <p>Fee: ₹${fee}</p>
+                    <button onclick="alert('Selected ${name}')">
+                        Enroll Now
+                    </button>
+                </div>
+            `;
+        }
+
+        // Display 3 Courses
+        document.getElementById("courses").innerHTML =
+            CourseCard("Java", "3 Months", 12000) +
+            CourseCard("Python", "4 Months", 8000) +
+            CourseCard("React", "2 Months", 1000);
+
+    </script>
+
+</body>
+</html>
